@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(90deg, #FFD700, #000);
+  color: white;
+  text-align: center;
+}
+
+.game-container {
+  max-width: 400px;
+  width: 90%;
+  margin: auto;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.goal {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 30px;
+  background: white;
+  border-radius: 5px;
+}
+
+.ball {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+}
+
+button {
+  padding: 10px 20px;
+  background: #000;
+  color: #FFD700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.goal-post {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  animation: fadeIn 1s ease-in;
+}
+/* Fondo translúcido en toda la página */
+body.celebration-active {
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro translúcido */
+  overflow-y: auto; /* Habilita scroll vertical */
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Empieza desde la parte superior */  
+  display: block;
+  padding: 10px; /* Espaciado interno */
+  overflow-y: auto; /* Scroll en toda la página */
+  height: auto; /* Altura ajustable según el contenido */
+  box-sizing: border-box;
+}
+.congrats-message,
+.card {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto; /* Espaciado entre las cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  overflow: visible; /* Aseguramos que no tengan scroll interno */
+  height: auto; /* Altura dinámica según el contenido */
+}
+
+/* Estilo para el mensaje de felicitación */
+.congrats-message {
+  background-color: #feca1b; /* Color oro tipo Peñarol */
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Estilo para el mensaje personalizado */
+.card {
+  background-color: #000; /* Fondo negro */
+  color: #FFD700; /* Texto amarillo */
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Responsividad adicional */
+@media (max-width: 768px) {
+  .congrats-message,
+  .card {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto en dispositivos más pequeños */
+    padding: 15px; /* Reduce el padding */
+  }
+}
+
+.congrats-message img.copa {
+  max-width: 100%; /* Ajusta al ancho disponible de la card */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Centra la imagen dentro del contenedor */
+  margin: 10px auto; /* Espaciado superior e inferior y centra horizontalmente */
+}
